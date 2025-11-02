@@ -1,0 +1,11 @@
+{
+  "general": {
+    "app_name": "Order Assistance"
+  },
+  "products": {
+    "button_name": "products"
+  },
+  "orders": {
+    "button_name": "orders"
+  }
+}
