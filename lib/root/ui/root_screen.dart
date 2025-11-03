@@ -5,6 +5,7 @@ import 'package:order_assistant/core/ui/app_button.dart';
 import 'package:order_assistant/core/ui/app_spacing.dart';
 import 'package:order_assistant/core/ui/app_text_style.dart';
 import 'package:order_assistant/core/ui/app_theme.dart';
+import 'package:order_assistant/orders/ui/orders_screen.dart';
 import 'package:order_assistant/products/ui/products_screen.dart';
 
 class RootScreen extends StatefulWidget {
@@ -50,7 +51,7 @@ class _RootState extends State<RootScreen> {
               Expanded(
                 child: screenState == Screen.products
                     ? ProductsScreen()
-                    : SizedBox.shrink(),
+                    : OrdersScreen(),
               ),
 
               Row(

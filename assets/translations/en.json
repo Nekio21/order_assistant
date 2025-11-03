@@ -6,6 +6,8 @@
     "button_name": "products"
   },
   "orders": {
-    "button_name": "orders"
+    "button_name": "orders",
+    "hint_text": "Type your email...",
+    "generate": "Generate"
   }
 }

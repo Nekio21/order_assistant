@@ -19,7 +19,7 @@ class AppTheme {
   static const Color textPrimary = Color(0xFF0A0908);
   static const Color textSecondary = Color(0xCC0A0908);
 
-  static const Color accent = Color(0xFF5E503F);
+  static const Color accent = Color(0xFF5E463B);
   static const Color onAccent = Color(0xFFEAE0D5);
 
   static ThemeData themeData() {

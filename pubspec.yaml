@@ -38,6 +38,10 @@ dependencies:
   google_fonts: ^6.3.2
   flutter_dotenv: ^5.2.1
   material_symbols_icons: ^4.2874.0
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.7
+  http: ^1.5.0
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:

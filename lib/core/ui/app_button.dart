@@ -37,6 +37,7 @@ class AppButton extends StatelessWidget {
           vertical: AppSpacing.small,
         ),
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           spacing: 8,
           children: [
