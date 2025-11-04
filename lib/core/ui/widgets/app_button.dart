@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:order_assistant/core/ui/app_spacing.dart';
-import 'package:order_assistant/core/ui/app_text_style.dart';
-import 'package:order_assistant/core/ui/app_theme.dart';
+import 'package:order_assistant/core/ui/theme/app_spacing.dart';
+import 'package:order_assistant/core/ui/theme/app_text_style.dart';
+import 'package:order_assistant/core/ui/theme/app_theme.dart';
 
 class AppButton extends StatelessWidget {
   final bool _isActive;
@@ -30,15 +30,14 @@ class AppButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.all(Radius.circular(12)),
+          borderRadius: const BorderRadius.all(Radius.circular(12)),
         ),
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: AppSpacing.base,
           vertical: AppSpacing.small,
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
           spacing: 8,
           children: [
             Icon(_icon, size: 24, color: color),

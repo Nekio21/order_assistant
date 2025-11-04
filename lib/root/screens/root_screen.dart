@@ -1,12 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:order_assistant/core/ui/app_button.dart';
-import 'package:order_assistant/core/ui/app_spacing.dart';
-import 'package:order_assistant/core/ui/app_text_style.dart';
-import 'package:order_assistant/core/ui/app_theme.dart';
-import 'package:order_assistant/orders/ui/orders_screen.dart';
-import 'package:order_assistant/products/ui/products_screen.dart';
+import 'package:order_assistant/core/ui/theme/app_text_style.dart';
+import 'package:order_assistant/core/ui/theme/app_theme.dart';
+import 'package:order_assistant/core/ui/widgets/app_button.dart';
+import 'package:order_assistant/core/ui/theme/app_spacing.dart';
+import 'package:order_assistant/orders/presentation/screens/orders_screen.dart';
+import 'package:order_assistant/products/presentation/screens/products_screen.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});
@@ -18,7 +18,7 @@ class RootScreen extends StatefulWidget {
 enum Screen { products, orders }
 
 class _RootState extends State<RootScreen> {
-  Screen screenState = Screen.products;
+  Screen currentScreen = Screen.products;
 
   @override
   void initState() {
@@ -30,50 +30,53 @@ class _RootState extends State<RootScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(AppSpacing.large),
+          padding: const EdgeInsets.all(AppSpacing.large),
 
           child: Column(
             spacing: AppSpacing.large,
             children: [
               Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: AppSpacing.large,
                   vertical: AppSpacing.base,
                 ),
                 color: AppTheme.primary,
                 child: Text(
-                  "general.app_name".tr(),
+                  'general.app_name'.tr(),
                   style: AppTextStyle.headingLarge.copyWith(
                     color: AppTheme.onPrimary,
                   ),
                 ),
               ),
               Expanded(
-                child: screenState == Screen.products
-                    ? ProductsScreen()
-                    : OrdersScreen(),
+                child: IndexedStack(
+                  index: currentScreen == Screen.products ? 0 : 1,
+                  children: const [
+                    SizedBox.expand(child: ProductsScreen()),
+                    SizedBox.expand(child: OrdersScreen()),
+                  ],
+                ),
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   AppButton(
-                    isActive: screenState == Screen.products,
+                    isActive: currentScreen == Screen.products,
                     icon: Symbols.shoppingmode,
-                    text: "products.button_name".tr(),
+                    text: 'products.button_name'.tr(),
                     onClick: () {
                       setState(() {
-                        screenState = Screen.products;
+                        currentScreen = Screen.products;
                       });
                     },
                   ),
                   AppButton(
-                    isActive: screenState == Screen.orders,
+                    isActive: currentScreen == Screen.orders,
                     icon: Symbols.delivery_truck_speed,
-                    text: "products.button_name".tr(),
+                    text: 'orders.button_name'.tr(),
                     onClick: () {
                       setState(() {
-                        screenState = Screen.orders;
+                        currentScreen = Screen.orders;
                       });
                     },
                   ),

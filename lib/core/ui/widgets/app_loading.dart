@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'app_theme.dart';
+import 'package:order_assistant/core/ui/theme/app_theme.dart';
 
 class AppLoading extends StatelessWidget {
   final bool isLoading;
@@ -14,7 +13,7 @@ class AppLoading extends StatelessWidget {
       absorbing: isLoading,
       child: Stack(
         alignment: AlignmentDirectional.center,
-        children: [if (isLoading) CircularProgressIndicator(color: AppTheme.primary), child],
+        children: [if (isLoading) const CircularProgressIndicator(color: AppTheme.primary), child],
       ),
     );
   }

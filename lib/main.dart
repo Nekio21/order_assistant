@@ -1,18 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:order_assistant/core/ui/app_theme.dart';
-import 'package:order_assistant/root/ui/root_screen.dart';
+import 'package:order_assistant/core/ui/theme/app_theme.dart';
+import 'package:order_assistant/root/screens/root_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  await dotenv.load();
   await EasyLocalization.ensureInitialized();
 
   runApp(EasyLocalization(
-      supportedLocales: [Locale('en')],
+      supportedLocales: const [Locale('en')],
       path: 'assets/translations',
-      fallbackLocale: Locale('en'),
+      fallbackLocale: const Locale('en'),
       child: const MyApp()));
 }
 

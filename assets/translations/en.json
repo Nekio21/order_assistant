@@ -8,6 +8,15 @@
   "orders": {
     "button_name": "orders",
     "hint_text": "Type your email...",
-    "generate": "Generate"
+    "generate": "Generate",
+    "not_found": "Not found",
+    "pcs": "{number} pcs"
+  },
+  "errors": {
+    "network": "Network error",
+    "server": "Server error",
+    "ai": "AI error",
+    "key": "Invalid API key",
+    "unknown": "Unknown error"
   }
 }
